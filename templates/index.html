@@ -1,20 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>Superhero Search</title>
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1>Task Master</h1>
-
-    <table>
-        <tr>
-            <th>Tast</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-    </table>
+    <h1>Superhero Search</h1>
 
     <div id="super_hero_info"></div>
 
@@ -28,8 +20,32 @@
         <input type="text" name="content" id="content">
         <input type="submit" value="Add Task">
     </form>
+    <br>
+    
+    <table>
+    {% for entry in superhero_data %}
+    <tr>
+        <th>{{ entry }}</th>
+        {% if superhero_data[entry]|int != 0 %}
+            <td>{{ superhero_data[entry] }}</td>
+            <tr></tr>
+        {% elif entry == 'name' or entry == 'slug' %}
+            <td>{{ superhero_data[entry] }}</td>
+            <tr></tr>
+        {% else %}
+            {% for stat in superhero_data[entry] %}
+                <td>{{ stat }}</td>
+                <td>{{ superhero_data[entry][stat] }}</td>
+                <tr></tr>
+                <td></td>
+            {% endfor %}
+        {% endif %}
 
-    {{ superhero_data }}
+
+    </tr>
+    {% endfor %}
+    </table>
+
 
 </div>
 {% endblock %}
