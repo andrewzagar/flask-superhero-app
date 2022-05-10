@@ -16,11 +16,11 @@
         <label for="html">Hero</label><br>
         <input type="radio" id="villian" name="Hero_Villan" value="villian">
         <label for="html">Villan</label><br>
-
+        <br>
         <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
+        <input type="submit" value="Search">
     </form>
-    <br>
+    <br><br>
     
     <table>
     {% for entry in superhero_data %}
@@ -40,12 +40,8 @@
                 <td></td>
             {% endfor %}
         {% endif %}
-
-
     </tr>
     {% endfor %}
     </table>
-
-
 </div>
 {% endblock %}
