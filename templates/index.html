@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Task Master</h1>
+
+    <table>
+        <tr>
+            <th>Tast</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+
+    <div id="super_hero_info"></div>
+
+    <form action="submit_form" method="GET">
+        <input type="radio" id="hero" name="Hero_Villan" value="hero" checked="checked">
+        <label for="html">Hero</label><br>
+        <input type="radio" id="villian" name="Hero_Villan" value="villian">
+        <label for="html">Villan</label><br>
+
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+
+    {{ superhero_data }}
+
+</div>
+{% endblock %}
