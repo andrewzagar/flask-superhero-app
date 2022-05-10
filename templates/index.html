@@ -35,7 +35,11 @@
         {% else %}
             {% for stat in superhero_data[entry] %}
                 <td>{{ stat }}</td>
-                <td>{{ superhero_data[entry][stat] }}</td>
+                {% if entry == 'images' %}
+                    <td><img src="{{ superhero_data[entry][stat] }}"></td>
+                {% else %}
+                    <td>{{ superhero_data[entry][stat] }}</td>
+                {% endif %}
                 <tr></tr>
                 <td></td>
             {% endfor %}
