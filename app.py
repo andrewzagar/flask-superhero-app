@@ -15,7 +15,7 @@ if not app_api_key:
     raise Exception("APP_API_KEY must be set as an env var. See readme.")
 
 users = {
-    "opus": generate_password_hash(app_api_key),
+    "user": generate_password_hash(app_api_key),
 }
 
 @auth.verify_password
@@ -38,7 +38,7 @@ def submit_form():
     headers = {
 	    "X-RapidAPI-Key": superhero_api_key
     }
-    hero_type = request.args.get('Hero_Villan')
+    hero_type = request.args.get('Hero_Villain')
     hero_name = request.args.get('content')
 
     if not hero_name:

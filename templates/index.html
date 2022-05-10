@@ -12,10 +12,10 @@
 
     <form action="submit_form" method="GET">
 
-        <input type="radio" id="hero" name="Hero_Villan" value="hero" checked="checked">
+        <input type="radio" id="hero" name="Hero_Villain" value="hero" checked="checked">
         <label for="html">Hero</label><br>
-        <input type="radio" id="villian" name="Hero_Villan" value="villian">
-        <label for="html">Villan</label><br>
+        <input type="radio" id="villain" name="Hero_Villain" value="hero">
+        <label for="html">Villain</label><br>
         <br>
         <input type="text" name="content" id="content">
         <input type="submit" value="Search">
@@ -29,7 +29,7 @@
         {% if superhero_data[entry]|int != 0 %}
             <td>{{ superhero_data[entry] }}</td>
             <tr></tr>
-        {% elif entry == 'name' or entry == 'slug' %}
+        {% elif entry == 'name' or entry == 'slug' or entry == 'error' %}
             <td>{{ superhero_data[entry] }}</td>
             <tr></tr>
         {% else %}
