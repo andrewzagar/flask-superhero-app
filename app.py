@@ -45,7 +45,7 @@ def submit_form():
     hero_name = request.args.get('content')
 
     if not hero_name:
-        output = {'error: no entry'}
+        output = {"error": "no entry"}
     else:
         response = requests.request("GET", url, headers=headers, params={hero_type: hero_name})
 
